@@ -1,0 +1,852 @@
+package ontology;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+
+import org.semanticweb.HermiT.Reasoner;
+import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.model.AddAxiom;
+import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassAssertionAxiom;
+import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLDataPropertyAssertionAxiom;
+import org.semanticweb.owlapi.model.OWLLiteral;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
+import org.semanticweb.owlapi.model.OWLObjectPropertyAssertionAxiom;
+import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLOntologyChange;
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.model.RemoveAxiom;
+import org.semanticweb.owlapi.reasoner.NodeSet;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.semanticweb.owlapi.util.OWLEntityRemover;
+
+import agents.BaseAgent;
+import agents.BaseEntityAgent;
+import agents.BaseEntityAgent.RelationshipType;
+import agents.BaseStructureAgent;
+import agents.heroAgents.BaseHeroAgent;
+import agents.heroAgents.BaseHeroAgent.HeroAbilityTrait;
+import agents.items.BaseItem;
+import agents.items.CraftingRecipe;
+import agents.items.equipment.Equipment;
+import agents.items.equipment.Equipment.EquipmentType;
+import agents.items.potions.BasePotion;
+import agents.items.potions.BasePotion.PotionType;
+import agents.monsterAgents.BaseMonsterAgent;
+import agents.monsterAgents.BaseMonsterAgent.MonsterTrait;
+import collectiables.chests.BaseChest;
+import collectiables.materials.BaseMaterial.MaterialType;
+
+import java.util.Set;
+
+public class GameOntology {
+	private static OWLOntologyManager ontoManager = OWLManager.T//OWLManager.createOWLOntologyManager();;
+	private static OWLOntology gameOntology;
+	private OWLDataFactory dataFactory;
+	
+	private static String ontologyIRIStr;
+	
+	private static boolean newOntologyCreated = false;
+	
+	public GameOntology() {
+		dataFactory = ontoManager.getOWLDataFactory();
+		
+		if(!newOntologyCreated) {
+			loadOntologyFromFile(ontoManager);
+		}
+		
+		ontologyIRIStr = gameOntology.getOntologyID().getOntologyIRI().toString() + "#";
+	}
+
+	private static void loadOntologyFromFile(OWLOntologyManager ontoManager) {
+		
+		try {
+				File ontoFile = new File("src/ontology/gameOntologyOriginal.owl");
+				File ontoCopyFile = new File("src/ontology/gameOntology.owl");
+				
+				System.out.println("Created Ontology!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				newOntologyCreated = true;
+				if(ontoCopyFile.exists()) {
+					ontoCopyFile.delete();
+				}
+				Files.copy(ontoFile.toPath(), ontoCopyFile.toPath());
+				gameOntology = ontoManager.loadOntologyFromOntologyDocument(ontoCopyFile);
+				
+		}  catch (IOException e) {
+			e.printStackTrace();
+		} catch (OWLOntologyCreationException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private synchronized static void saveOntology(List<OWLOntologyChange> list) {
+
+		System.out.println(Thread.currentThread().getName() + " is applying changes");
+		synchronized (OWLOntologyManager.class) {
+			ontoManager.applyChanges(list);
+		}
+		System.out.println(Thread.currentThread().getName() + " applyied changes");
+		
+		try {
+			ontoManager.saveOntology(gameOntology);
+			System.out.println("Ontology Saved");
+		} catch (OWLOntologyStorageException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void addHeroAgent(BaseHeroAgent agent) {
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		
+		OWLClass agentClass = null;
+		switch (((BaseHeroAgent) agent).getHeroType()) {
+		case WARRIOR: {
+			agentClass = dataFactory.getOWLClass(IRI.create(ontologyIRIStr + "Warrior"));
+			break;
+		}
+		case ROGUE: {
+			agentClass = dataFactory.getOWLClass(IRI.create(ontologyIRIStr + "Rogue"));
+			break;
+		}
+		case ARCHER: {
+			agentClass = dataFactory.getOWLClass(IRI.create(ontologyIRIStr + "Archer"));
+			break;
+		}
+		}
+		
+		OWLNamedIndividual newAgent = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agent.getLocalName()));
+		OWLClassAssertionAxiom axiom = dataFactory.getOWLClassAssertionAxiom(agentClass, newAgent);
+		axioms.add(new AddAxiom(gameOntology, axiom));
+		
+		String personalityTrait = agent.getPersonalityTrait().toString();
+		personalityTrait = personalityTrait.substring(0, 1) + personalityTrait.substring(1).toLowerCase();
+		OWLNamedIndividual personalityTraitInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + personalityTrait));
+		OWLObjectProperty hasPersonalityTrait = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasPersonalityTrait"));
+		OWLObjectPropertyAssertionAxiom personalityAxiom = dataFactory.getOWLObjectPropertyAssertionAxiom(hasPersonalityTrait, newAgent, personalityTraitInd);
+		axioms.add(new AddAxiom(gameOntology, personalityAxiom));
+		
+		for (HeroAbilityTrait abilityTrait : agent.getAbilityTraits()) {
+			
+			String abilityTraitStr = abilityTrait.toString();
+			abilityTraitStr = abilityTraitStr.substring(0, 1) + abilityTraitStr.substring(1).toLowerCase();
+			OWLNamedIndividual abilityTraitInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + abilityTraitStr));
+			OWLObjectProperty hasAbilityTrait = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasAbilityTrait"));
+			OWLObjectPropertyAssertionAxiom abilityAxiom = dataFactory.getOWLObjectPropertyAssertionAxiom(hasAbilityTrait, newAgent, abilityTraitInd);
+			axioms.add(new AddAxiom(gameOntology, abilityAxiom));
+		}
+	
+		
+		OWLDataProperty healthProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "health"));
+		OWLDataPropertyAssertionAxiom healthAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(healthProperty, newAgent, agent.getMaxHealth());
+		axioms.add(new AddAxiom(gameOntology, healthAxiom));
+		
+		OWLDataProperty attackProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "attack"));
+		OWLDataPropertyAssertionAxiom attackAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(attackProperty, newAgent, agent.getBaseAttack());
+		axioms.add(new AddAxiom(gameOntology, attackAxiom));
+		
+		OWLDataProperty critProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "critChance"));
+		OWLDataPropertyAssertionAxiom critAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(critProperty, newAgent, agent.getCritChance());
+		axioms.add(new AddAxiom(gameOntology, critAxiom));
+		
+		OWLDataProperty evasionProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "evasionChance"));
+		OWLDataPropertyAssertionAxiom evasionAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(evasionProperty, newAgent, agent.getEvasionChance());
+		axioms.add(new AddAxiom(gameOntology, evasionAxiom));
+		
+		OWLDataProperty levelProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "level"));
+		OWLDataPropertyAssertionAxiom levelAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(levelProperty, newAgent, agent.getLevel());
+		axioms.add(new AddAxiom(gameOntology, levelAxiom));
+		
+		if(agent.getSpawnStructure() != null) {
+			OWLNamedIndividual structureInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agent.getSpawnStructure().getLocalName()));
+			OWLObjectProperty isSpawnedByStructure = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isSpawnedByStructure"));
+			OWLObjectPropertyAssertionAxiom traitAxiom = dataFactory.getOWLObjectPropertyAssertionAxiom(isSpawnedByStructure, newAgent, structureInd);
+			axioms.add(new AddAxiom(gameOntology, traitAxiom));
+		}
+		
+		saveOntology(axioms);
+	}
+	
+	public void addMonsterAgent(BaseMonsterAgent agent) {
+
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		
+		OWLClass agentClass = null;
+		switch (((BaseMonsterAgent) agent).getMonsterType()) {
+		case SKELETON: {
+			agentClass = dataFactory.getOWLClass(IRI.create(ontologyIRIStr + "SkeletonMonster"));
+			break;
+		}
+		case SPIDER: {
+			agentClass = dataFactory.getOWLClass(IRI.create(ontologyIRIStr + "SpiderMonster"));
+			break;
+		}
+		}
+		
+		OWLNamedIndividual newAgent = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agent.getLocalName()));
+		OWLClassAssertionAxiom axiom = dataFactory.getOWLClassAssertionAxiom(agentClass, newAgent);
+		axioms.add(new AddAxiom(gameOntology, axiom));
+		
+		for (MonsterTrait trait : agent.getTraits()) {
+			
+			String traitStr = trait.toString();
+			traitStr = traitStr.substring(0, 1) + traitStr.substring(1).toLowerCase();
+			OWLNamedIndividual traitInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + traitStr));
+			OWLObjectProperty hasMonsterTrait = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasMonsterTrait"));
+			OWLObjectPropertyAssertionAxiom traitAxiom = dataFactory.getOWLObjectPropertyAssertionAxiom(hasMonsterTrait, newAgent, traitInd);
+			axioms.add(new AddAxiom(gameOntology, traitAxiom));
+		}
+		
+		OWLDataProperty healthProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "health"));
+		OWLDataPropertyAssertionAxiom healthAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(healthProperty, newAgent, agent.getMaxHealth());
+		axioms.add(new AddAxiom(gameOntology, healthAxiom));
+		
+		OWLDataProperty attackProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "attack"));
+		OWLDataPropertyAssertionAxiom attackAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(attackProperty, newAgent, agent.getBaseAttack());
+		axioms.add(new AddAxiom(gameOntology, attackAxiom));
+		
+		OWLDataProperty critProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "critChance"));
+		OWLDataPropertyAssertionAxiom critAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(critProperty, newAgent, agent.getCritChance());
+		axioms.add(new AddAxiom(gameOntology, critAxiom));
+		
+		OWLDataProperty evasionProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "evasionChance"));
+		OWLDataPropertyAssertionAxiom evasionAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(evasionProperty, newAgent, agent.getEvasionChance());
+		axioms.add(new AddAxiom(gameOntology, evasionAxiom));
+		
+		OWLDataProperty levelProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "level"));
+		OWLDataPropertyAssertionAxiom levelAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(levelProperty, newAgent, agent.getLevel());
+		axioms.add(new AddAxiom(gameOntology, levelAxiom));
+		
+		if(agent.getSpawnStructure() != null) {
+			OWLNamedIndividual structureInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agent.getSpawnStructure().getLocalName()));
+			OWLObjectProperty isSpawnedByStructure = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isSpawnedByStructure"));
+			OWLObjectPropertyAssertionAxiom traitAxiom = dataFactory.getOWLObjectPropertyAssertionAxiom(isSpawnedByStructure, newAgent, structureInd);
+			axioms.add(new AddAxiom(gameOntology, traitAxiom));
+		}
+		
+		saveOntology(axioms);
+	
+	}
+	
+	public void addStructureAgent(BaseStructureAgent agent) {
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		
+		OWLClass agentClass = null;
+		if(agent.isHeroStructureAgent()) {
+			agentClass = dataFactory.getOWLClass(IRI.create(ontologyIRIStr + "City"));
+		}
+		else {
+			switch (agent.getSpawnedUnitClassName()) {
+			case "Skeleton": {
+				agentClass = dataFactory.getOWLClass(IRI.create(ontologyIRIStr + "Graveyard"));
+				break;
+			}
+			case "Spider": {
+				agentClass = dataFactory.getOWLClass(IRI.create(ontologyIRIStr + "SpiderNest"));
+				break;
+			}
+			}
+		}
+		
+		OWLNamedIndividual newAgent = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agent.getLocalName()));
+		OWLClassAssertionAxiom axiom = dataFactory.getOWLClassAssertionAxiom(agentClass, newAgent);
+		axioms.add(new AddAxiom(gameOntology, axiom));
+		
+		OWLDataProperty healthProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "structureHealth"));
+		OWLDataPropertyAssertionAxiom healthAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(healthProperty, newAgent, agent.getMaxHealth());
+		axioms.add(new AddAxiom(gameOntology, healthAxiom));
+		
+		OWLDataProperty attackProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "structureAttack"));
+		OWLDataPropertyAssertionAxiom attackAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(attackProperty, newAgent, agent.getAttack());
+		axioms.add(new AddAxiom(gameOntology, attackAxiom));
+		
+		OWLDataProperty levelProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "structureLevel"));
+		OWLDataPropertyAssertionAxiom levelAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(levelProperty, newAgent, agent.getLevel());
+		axioms.add(new AddAxiom(gameOntology, levelAxiom));
+		
+		if(agent.getOwner() != null) {
+			OWLNamedIndividual ownerInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agent.getOwner().getLocalName()));
+			
+			OWLObjectProperty isOwnedByProperty = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isOwnedBy"));
+			OWLObjectPropertyAssertionAxiom isOwnedByAxiom = dataFactory.getOWLObjectPropertyAssertionAxiom(isOwnedByProperty, newAgent, ownerInd);
+			axioms.add(new AddAxiom(gameOntology, isOwnedByAxiom));
+		}
+		
+		saveOntology(axioms);
+	}
+	
+	public void updateEntityAgentStats(BaseEntityAgent agent, int oldLevel, int oldHealth, int oldAttack) {
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agent.getLocalName()));
+		
+		OWLDataProperty healthProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "health"));
+		OWLDataPropertyAssertionAxiom oldHealthAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(healthProperty, agentInd, oldHealth);
+		OWLDataPropertyAssertionAxiom healthAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(healthProperty, agentInd, agent.getMaxHealth());
+		axioms.add(new RemoveAxiom(gameOntology, oldHealthAxiom));
+		axioms.add(new AddAxiom(gameOntology, healthAxiom));
+		
+		OWLDataProperty attackProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "attack"));
+		OWLDataPropertyAssertionAxiom oldAttackAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(attackProperty, agentInd, oldAttack);
+		OWLDataPropertyAssertionAxiom attackAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(attackProperty, agentInd, agent.getBaseAttack());
+		axioms.add(new RemoveAxiom(gameOntology, oldAttackAxiom));
+		axioms.add(new AddAxiom(gameOntology, attackAxiom));
+		
+		OWLDataProperty levelProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "level"));
+		OWLDataPropertyAssertionAxiom oldLevelAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(levelProperty, agentInd, oldLevel);
+		OWLDataPropertyAssertionAxiom levelAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(levelProperty, agentInd, agent.getLevel());
+		axioms.add(new RemoveAxiom(gameOntology, oldLevelAxiom));
+		axioms.add(new AddAxiom(gameOntology, levelAxiom));
+		
+		saveOntology(axioms);
+	}
+	
+	public void updateStructureAgentStats(BaseStructureAgent agent, int oldLevel, int oldHealth, int oldAttack, BaseEntityAgent oldOwner) {
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agent.getLocalName()));
+		
+		OWLDataProperty healthProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "structureHealth"));
+		OWLDataPropertyAssertionAxiom oldHealthAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(healthProperty, agentInd, oldHealth);
+		OWLDataPropertyAssertionAxiom healthAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(healthProperty, agentInd, agent.getMaxHealth());
+		axioms.add(new RemoveAxiom(gameOntology, oldHealthAxiom));
+		axioms.add(new AddAxiom(gameOntology, healthAxiom));
+		
+		OWLDataProperty attackProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "structureAttack"));
+		OWLDataPropertyAssertionAxiom oldAttackAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(attackProperty, agentInd, oldAttack);
+		OWLDataPropertyAssertionAxiom attackAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(attackProperty, agentInd, agent.getAttack());
+		axioms.add(new RemoveAxiom(gameOntology, oldAttackAxiom));
+		axioms.add(new AddAxiom(gameOntology, attackAxiom));
+		
+		OWLDataProperty levelProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "structureLevel"));
+		OWLDataPropertyAssertionAxiom oldLevelAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(levelProperty, agentInd, oldLevel);
+		OWLDataPropertyAssertionAxiom levelAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(levelProperty, agentInd, agent.getLevel());
+		axioms.add(new RemoveAxiom(gameOntology, oldLevelAxiom));
+		axioms.add(new AddAxiom(gameOntology, levelAxiom));
+		
+		if(agent.getOwner() != null) {
+			OWLNamedIndividual oldOwnerInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + oldOwner.getLocalName()));
+			OWLNamedIndividual ownerInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agent.getOwner().getLocalName()));
+			OWLObjectProperty isOwnedByProperty = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isOwnedBy"));
+			OWLObjectPropertyAssertionAxiom oldIsOwnedByAxiom = dataFactory.getOWLObjectPropertyAssertionAxiom(isOwnedByProperty, agentInd, oldOwnerInd);
+			OWLObjectPropertyAssertionAxiom isOwnedByAxiom = dataFactory.getOWLObjectPropertyAssertionAxiom(isOwnedByProperty, agentInd, ownerInd);
+			axioms.add(new RemoveAxiom(gameOntology, oldIsOwnedByAxiom));
+			axioms.add(new AddAxiom(gameOntology, isOwnedByAxiom));
+		}
+		
+		saveOntology(axioms);
+	}
+	
+	public void addEquipment(Equipment equipment) {
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		
+		String equipmentType = equipment.getType().toString();
+		equipmentType = equipmentType.substring(0, 1) + equipmentType.substring(1).toLowerCase();
+		
+		OWLClass equipmentClass = dataFactory.getOWLClass(IRI.create(ontologyIRIStr + equipmentType));
+		OWLNamedIndividual equipmentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + equipment.getName()));
+		OWLClassAssertionAxiom axiom = dataFactory.getOWLClassAssertionAxiom(equipmentClass, equipmentInd);
+		axioms.add(new AddAxiom(gameOntology, axiom));
+		
+		if(equipment.getType() == EquipmentType.BOW || equipment.getType() == EquipmentType.SWORD || equipment.getType() == EquipmentType.DAGGER || equipment.getType() == EquipmentType.HAMMER) {
+			OWLDataProperty attackProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "bonusAttack"));
+			OWLDataPropertyAssertionAxiom attackAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(attackProperty, equipmentInd, equipment.getAttackBonus());
+			axioms.add(new AddAxiom(gameOntology, attackAxiom));
+		}
+		else {
+			OWLDataProperty healthProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "bonusHealth"));
+			OWLDataPropertyAssertionAxiom healthAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(healthProperty, equipmentInd, equipment.getHealthBonus());
+			axioms.add(new AddAxiom(gameOntology, healthAxiom));
+		}
+
+		
+		OWLDataProperty priceProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "itemPrice"));
+		OWLDataPropertyAssertionAxiom priceAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(priceProperty, equipmentInd, equipment.getPrice());
+		axioms.add(new AddAxiom(gameOntology, priceAxiom));
+		
+		String materialName = equipment.getMaterial().toString();
+		materialName = materialName.substring(0, 1) + materialName.substring(1).toLowerCase();
+		OWLNamedIndividual materialInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + materialName));
+		OWLObjectProperty madeFrom = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "madeFrom"));
+		OWLObjectPropertyAssertionAxiom madeFromAxiom = dataFactory.getOWLObjectPropertyAssertionAxiom(madeFrom, equipmentInd, materialInd);
+		axioms.add(new AddAxiom(gameOntology, madeFromAxiom));
+		
+		String qualityName = equipment.getQuality().toString();
+		qualityName = qualityName.substring(0, 1) + qualityName.substring(1).toLowerCase();
+		OWLNamedIndividual qualityInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + qualityName));
+		OWLObjectProperty hasQuality = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasQuality"));
+		OWLObjectPropertyAssertionAxiom hasQualityAxiom = dataFactory.getOWLObjectPropertyAssertionAxiom(hasQuality, equipmentInd, qualityInd);
+		axioms.add(new AddAxiom(gameOntology, hasQualityAxiom));
+		
+		saveOntology(axioms);
+	}
+	
+	public void addPotion(BasePotion potion) {
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		
+		String potionType = potion.getType().toString();
+		potionType = potionType.substring(0, 1) + potionType.substring(1).toLowerCase();
+		potionType.replace("health", "Health");
+		
+		OWLClass potionClass = dataFactory.getOWLClass(IRI.create(ontologyIRIStr + potionType + "Potion"));
+		OWLNamedIndividual potionInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + potion.getName()));
+		OWLClassAssertionAxiom axiom = dataFactory.getOWLClassAssertionAxiom(potionClass, potionInd);
+		axioms.add(new AddAxiom(gameOntology, axiom));
+		
+		OWLDataProperty priceProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "itemPrice"));
+		OWLDataPropertyAssertionAxiom priceAxiom = dataFactory.getOWLDataPropertyAssertionAxiom(priceProperty, potionInd, potion.getPrice());
+		axioms.add(new AddAxiom(gameOntology, priceAxiom));
+		
+		String qualityName = potion.getQuality().toString();
+		qualityName = qualityName.substring(0, 1) + qualityName.substring(1).toLowerCase();
+		OWLNamedIndividual qualityInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + qualityName));
+		OWLObjectProperty hasQuality = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasQuality"));
+		OWLObjectPropertyAssertionAxiom hasQualityAxiom = dataFactory.getOWLObjectPropertyAssertionAxiom(hasQuality, potionInd, qualityInd);
+		axioms.add(new AddAxiom(gameOntology, hasQualityAxiom));
+		
+		saveOntology(axioms);
+	}
+	
+	public void addOwnedRelationshipBetweenAgentAndItem(BaseAgent agent, String itemName) {
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agent.getLocalName()));
+		OWLNamedIndividual ItemInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + itemName));
+		
+		OWLObjectPropertyAssertionAxiom axiom = null;
+		if(agent.isEntityAgent()) {
+			OWLObjectProperty hasItem = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasItem"));
+			axiom = dataFactory.getOWLObjectPropertyAssertionAxiom(hasItem, agentInd, ItemInd);
+		}
+		else {
+			OWLObjectProperty stores = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "stores"));
+			axiom = dataFactory.getOWLObjectPropertyAssertionAxiom(stores, agentInd, ItemInd);
+		}
+		
+		AddAxiom addAxiom = new AddAxiom(gameOntology, axiom);
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		axioms.add(addAxiom);
+		saveOntology(axioms);
+	}
+	
+	public void addOwnedRelationshipBetweenAgentAndItem(BaseAgent agent, ArrayList<String> itemNames) {
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agent.getLocalName()));
+		
+		for (String itemName : itemNames) {
+			OWLNamedIndividual ItemInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + itemName));
+			
+			OWLObjectPropertyAssertionAxiom axiom = null;
+			if(agent.isEntityAgent()) {
+				OWLObjectProperty hasItem = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasItem"));
+				axiom = dataFactory.getOWLObjectPropertyAssertionAxiom(hasItem, agentInd, ItemInd);
+			}
+			else {
+				OWLObjectProperty stores = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "stores"));
+				axiom = dataFactory.getOWLObjectPropertyAssertionAxiom(stores, agentInd, ItemInd);
+			}
+			
+			AddAxiom addAxiom = new AddAxiom(gameOntology, axiom);
+			axioms.add(addAxiom);
+		}
+		
+		saveOntology(axioms);
+	}
+	
+	public void removeOwnedRelationshipBetweenAgentAndItem(BaseAgent agent, String itemName) {
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agent.getLocalName()));
+		OWLNamedIndividual ItemInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + itemName));
+		
+		OWLObjectPropertyAssertionAxiom axiom = null;
+		if(agent.isEntityAgent()) {
+			OWLObjectProperty hasItem = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasItem"));
+			axiom = dataFactory.getOWLObjectPropertyAssertionAxiom(hasItem, agentInd, ItemInd);
+		}
+		else {
+			OWLObjectProperty stores = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "stores"));
+			axiom = dataFactory.getOWLObjectPropertyAssertionAxiom(stores, agentInd, ItemInd);
+		}
+		
+		RemoveAxiom removeAxiom = new RemoveAxiom(gameOntology, axiom);
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		axioms.add(removeAxiom);
+		saveOntology(axioms);
+	}
+	
+	public void removeOwnedRelationshipBetweenAgentAndItem(BaseAgent agent, ArrayList<String> itemNames) {
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agent.getLocalName()));
+		
+		for (String itemName : itemNames) {
+			OWLNamedIndividual ItemInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + itemName));
+			
+			OWLObjectPropertyAssertionAxiom axiom = null;
+			if(agent.isEntityAgent()) {
+				OWLObjectProperty hasItem = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasItem"));
+				axiom = dataFactory.getOWLObjectPropertyAssertionAxiom(hasItem, agentInd, ItemInd);
+			}
+			else {
+				OWLObjectProperty stores = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "stores"));
+				axiom = dataFactory.getOWLObjectPropertyAssertionAxiom(stores, agentInd, ItemInd);
+			}
+			
+			RemoveAxiom removeAxiom = new RemoveAxiom(gameOntology, axiom);
+
+			axioms.add(removeAxiom);
+		}
+		saveOntology(axioms);
+	}
+	
+	public void addEquipedRelationshipBetweenAgentAndEquipment(String agentName, String equipmentName, String equipmentType) {
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agentName));
+		OWLNamedIndividual equipmentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + equipmentName));
+		
+		OWLObjectProperty equipedPropery = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "equiped" + equipmentType));
+		
+		OWLObjectPropertyAssertionAxiom axiom = dataFactory.getOWLObjectPropertyAssertionAxiom(equipedPropery, agentInd, equipmentInd);
+		AddAxiom addAxiom = new AddAxiom(gameOntology, axiom);
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		axioms.add(addAxiom);
+		saveOntology(axioms);
+	}
+	
+	public void addEquipedRelationshipBetweenAgentAndEquipment(String agentName, HashMap<String, String> equipedEquipmentNamesAndTypes) {
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agentName));
+		
+		for (String equipmentName : equipedEquipmentNamesAndTypes.keySet()) {
+			OWLNamedIndividual equipmentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + equipmentName));
+			
+			OWLObjectProperty equipedPropery = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "equiped" + equipedEquipmentNamesAndTypes.get(equipmentName)));
+			
+			OWLObjectPropertyAssertionAxiom axiom = dataFactory.getOWLObjectPropertyAssertionAxiom(equipedPropery, agentInd, equipmentInd);
+			AddAxiom addAxiom = new AddAxiom(gameOntology, axiom);
+			axioms.add(addAxiom);
+		}
+		
+		saveOntology(axioms);
+	}
+	
+	public void removeEquipedRelationshipBetweenAgentAndEquipment(String agentName, String equipmentName, String equipmentType) {
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agentName));
+		OWLNamedIndividual equipmentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + equipmentName));
+		
+		OWLObjectProperty equipedPropery = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "equiped" + equipmentType));
+		
+		OWLObjectPropertyAssertionAxiom axiom = dataFactory.getOWLObjectPropertyAssertionAxiom(equipedPropery, agentInd, equipmentInd);
+		RemoveAxiom removeAxiom = new RemoveAxiom(gameOntology, axiom);
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		axioms.add(removeAxiom);
+		saveOntology(axioms);
+	}
+	
+	public void removeEquipedRelationshipBetweenAgentAndEquipment(String agentName, HashMap<String, String> equipmentNameAndType) {
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agentName));
+		
+		for (String equipmentName : equipmentNameAndType.keySet()) {
+			OWLNamedIndividual equipmentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + equipmentName));
+			
+			OWLObjectProperty equipedPropery = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "equiped" + equipmentNameAndType.get(equipmentName)));
+			
+			OWLObjectPropertyAssertionAxiom axiom = dataFactory.getOWLObjectPropertyAssertionAxiom(equipedPropery, agentInd, equipmentInd);
+			RemoveAxiom removeAxiom = new RemoveAxiom(gameOntology, axiom);
+			axioms.add(removeAxiom);
+		}
+		
+		saveOntology(axioms);
+	}
+	
+	public int getTotalEquipmentBonuses(String agentName) {
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agentName));
+		OWLReasoner reasoner = new Reasoner(gameOntology);
+		
+		OWLObjectProperty equipedPropery = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isEquipedBy"));
+		
+		OWLClassExpression classExpression = dataFactory.getOWLObjectHasValue(equipedPropery, agentInd);
+		
+		NodeSet<OWLNamedIndividual> equipmentSet = reasoner.getInstances(classExpression, false);
+		
+		OWLDataProperty attackProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "bonusAttack"));
+		OWLDataProperty healthProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "bonusHealth"));
+		
+		int bonus = 0;
+		for (OWLNamedIndividual equipmentInd : equipmentSet.getFlattened()) {
+			Set<OWLLiteral> literalSet = equipmentInd.getDataPropertyValues(healthProperty, gameOntology);
+			
+			if(!literalSet.iterator().hasNext()) {
+				literalSet = equipmentInd.getDataPropertyValues(attackProperty, gameOntology);
+			}
+			
+			if(literalSet.iterator().hasNext()) {
+				OWLLiteral lit = literalSet.iterator().next();
+				
+				bonus += Integer.parseInt(lit.getLiteral());
+			}
+		}
+		
+		return bonus;
+	}
+	
+	public ArrayList<CraftingRecipe> getAllCraftingRecipes(){
+		OWLClass craftingRecipeClass = dataFactory.getOWLClass(IRI.create(ontologyIRIStr + "CraftingRecipe"));
+		OWLReasoner reasoner = new Reasoner(gameOntology);
+		
+		NodeSet<OWLNamedIndividual> recipeSet = reasoner.getInstances(craftingRecipeClass, false);
+		
+		OWLObjectProperty isIngrediantOf = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isIngredientOf"));
+		OWLObjectProperty isProducedBy = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isProducedBy"));
+		
+		ArrayList<CraftingRecipe> usableRecipes = new ArrayList<>();
+		for (OWLNamedIndividual ind : recipeSet.getFlattened()) {
+			int counter = 1;
+			
+			HashMap<MaterialType, Integer> ingredients = new HashMap<>();
+			
+			OWLClassExpression classExpression = dataFactory.getOWLObjectHasValue(isIngrediantOf, ind);
+			
+			for (OWLNamedIndividual materialInd : reasoner.getInstances(classExpression, false).getFlattened()) {
+				String ingredientIRI = materialInd.getIRI().toString();
+				MaterialType ingredient = MaterialType.valueOf(ingredientIRI.replace(ontologyIRIStr, "").toUpperCase());
+				
+				OWLDataProperty ingredientAmountProperty = dataFactory.getOWLDataProperty(IRI.create(ontologyIRIStr + "ingredientAmount" + counter));
+				int amount = Integer.parseInt(ind.getDataPropertyValues(ingredientAmountProperty, gameOntology).iterator().next().getLiteral());
+				
+				ingredients.put(ingredient, amount);
+				counter++;
+			}
+			
+			classExpression = dataFactory.getOWLObjectHasValue(isProducedBy, ind);
+			OWLNamedIndividual itemInd = reasoner.getInstances(classExpression, false).getFlattened().iterator().next();
+			String item = itemInd.getIRI().toString().replace(ontologyIRIStr, "").replace("Class", "").toUpperCase();
+			
+			try {
+				usableRecipes.add(new CraftingRecipe(ingredients, EquipmentType.valueOf(item)));
+				
+			} catch (IllegalArgumentException e) {
+				item = item.replace("POTION", "");
+				usableRecipes.add(new CraftingRecipe(ingredients, PotionType.valueOf(item)));
+			}
+			
+		}
+		
+		return usableRecipes;
+	}
+	
+	public RelationshipType getRelationshipWithAgent(String agentName, String otherAgentName) {
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agentName));
+		OWLNamedIndividual otherAgentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + otherAgentName));
+		
+		OWLReasoner reasoner = new Reasoner(gameOntology);
+		
+		OWLObjectProperty isAlliedWith = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isAlliedWith"));
+		OWLObjectProperty isEnemiesWith = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isEnemiesWith"));
+		OWLObjectProperty isFriendlyWith = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isFriendlyWith"));
+		OWLObjectProperty isNeutralWith = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isNeutralWith"));
+		OWLObjectProperty isUnfriendlyWith = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isUnfriendlyWith"));
+		
+		if(reasoner.getObjectPropertyValues(agentInd, isNeutralWith).containsEntity(otherAgentInd)){
+			return RelationshipType.NEUTRAL;
+		}
+		if(reasoner.getObjectPropertyValues(agentInd, isFriendlyWith).containsEntity(otherAgentInd)){
+			return RelationshipType.FRIENDLY;
+		}
+		if(reasoner.getObjectPropertyValues(agentInd, isUnfriendlyWith).containsEntity(otherAgentInd)){
+			return RelationshipType.UNFRIENDLY;
+		}
+		if(reasoner.getObjectPropertyValues(agentInd, isEnemiesWith).containsEntity(otherAgentInd)){
+			return RelationshipType.ENEMIES;
+		}
+		if(reasoner.getObjectPropertyValues(agentInd, isAlliedWith).containsEntity(otherAgentInd)){
+			return RelationshipType.ALLIES;
+		}
+		return null;
+	}
+	
+	public void setRelationshipBetweenAgents(String agentName, String otherAgentName, RelationshipType relation) {
+		ArrayList<OWLOntologyChange> removeAxioms = getRemoveRelationshipBetweenAgentsAxioms(agentName, otherAgentName);
+		
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agentName));
+		OWLNamedIndividual otherAgentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + otherAgentName));
+		
+		OWLObjectProperty relationProperty = null;
+		switch (relation) {
+		case ALLIES: {
+			relationProperty = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isAlliedWith"));
+			break;
+		}
+		case FRIENDLY: {
+			relationProperty = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isFriendlyWith"));
+			break;
+		}
+		case NEUTRAL: {
+			relationProperty = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isNeutralWith"));
+			break;
+		}
+		case UNFRIENDLY: {
+			relationProperty = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isUnfriendlyWith"));
+			break;
+		}
+		case ENEMIES: {
+			relationProperty = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isEnemiesWith"));
+			break;
+		}
+		}
+		
+		OWLObjectPropertyAssertionAxiom axiom = dataFactory.getOWLObjectPropertyAssertionAxiom(relationProperty, agentInd, otherAgentInd);
+		AddAxiom addAxiom = new AddAxiom(gameOntology, axiom);
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		axioms.addAll(removeAxioms);
+		axioms.add(addAxiom);
+		saveOntology(axioms);
+		
+		if(relation == RelationshipType.ENEMIES) {
+			UpdateAgentAlliesOnNewEnemy(agentName, otherAgentName);
+		}
+		else if(relation == RelationshipType.ALLIES) {
+			UpdateAgentNewAllyOnEnemies(agentName, otherAgentName);
+		}
+	}
+	
+	private void UpdateAgentAlliesOnNewEnemy(String agentName, String enemyName) {
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agentName));
+		
+		OWLObjectProperty isAlliedWith = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isAlliedWith"));
+		
+		OWLClassExpression classExpression = dataFactory.getOWLObjectHasValue(isAlliedWith, agentInd);
+		
+		OWLReasoner reasoner = new Reasoner(gameOntology);
+		NodeSet<OWLNamedIndividual> allySet = reasoner.getInstances(classExpression, false);
+		
+		for (OWLNamedIndividual allyInd : allySet.getFlattened()) {
+			
+			String allyName = allyInd.getIRI().toString().split("#")[1];
+			
+			if(getRelationshipWithAgent(allyName, enemyName) == RelationshipType.ENEMIES) {
+				continue;
+			}
+			
+			removeRelationshipBetweenAgents(allyName, enemyName);
+			setRelationshipBetweenAgents(allyName, enemyName, RelationshipType.ENEMIES);
+		}
+	}
+	
+	private void UpdateAgentNewAllyOnEnemies(String agentName, String allyName) {
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agentName));
+		
+		OWLObjectProperty isEnemiesWith = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isEnemiesWith"));
+		
+		OWLClassExpression classExpression = dataFactory.getOWLObjectHasValue(isEnemiesWith, agentInd);
+		
+		OWLReasoner reasoner = new Reasoner(gameOntology);
+		NodeSet<OWLNamedIndividual> enemySet = reasoner.getInstances(classExpression, false);
+		
+		for (OWLNamedIndividual enemyInd : enemySet.getFlattened()) {
+			
+			String enemyName = enemyInd.getIRI().toString().split("#")[1];
+			
+			if(getRelationshipWithAgent(allyName, enemyName) == RelationshipType.ENEMIES) {
+				continue;
+			}
+			
+			removeRelationshipBetweenAgents(allyName, enemyName);
+			setRelationshipBetweenAgents(allyName, enemyName, RelationshipType.ENEMIES);
+		}
+	}
+	
+	public void removeRelationshipBetweenAgents(String agentName, String otherAgentName) {
+		ArrayList<OWLOntologyChange> removeAxioms = getRemoveRelationshipBetweenAgentsAxioms(agentName, otherAgentName);
+		saveOntology(removeAxioms);
+	}
+	
+	private ArrayList<OWLOntologyChange> getRemoveRelationshipBetweenAgentsAxioms(String agentName, String otherAgentName){
+		OWLNamedIndividual agentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + agentName));
+		OWLNamedIndividual otherAgentInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + otherAgentName));
+		
+		OWLObjectProperty isAlliedWith = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isAlliedWith"));
+		OWLObjectProperty isEnemiesWith = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isEnemiesWith"));
+		OWLObjectProperty isFriendlyWith = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isFriendlyWith"));
+		OWLObjectProperty isNeutralWith = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isNeutralWith"));
+		OWLObjectProperty isUnfriendlyWith = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "isUnfriendlyWith"));
+		
+		OWLObjectPropertyAssertionAxiom axiom1 = dataFactory.getOWLObjectPropertyAssertionAxiom(isAlliedWith, agentInd, otherAgentInd);
+		OWLObjectPropertyAssertionAxiom axiom2 = dataFactory.getOWLObjectPropertyAssertionAxiom(isEnemiesWith, agentInd, otherAgentInd);
+		OWLObjectPropertyAssertionAxiom axiom3 = dataFactory.getOWLObjectPropertyAssertionAxiom(isFriendlyWith, agentInd, otherAgentInd);
+		OWLObjectPropertyAssertionAxiom axiom4 = dataFactory.getOWLObjectPropertyAssertionAxiom(isNeutralWith, agentInd, otherAgentInd);
+		OWLObjectPropertyAssertionAxiom axiom5 = dataFactory.getOWLObjectPropertyAssertionAxiom(isUnfriendlyWith, agentInd, otherAgentInd);
+		
+		OWLObjectPropertyAssertionAxiom axiom6 = dataFactory.getOWLObjectPropertyAssertionAxiom(isAlliedWith, otherAgentInd, agentInd);
+		OWLObjectPropertyAssertionAxiom axiom7 = dataFactory.getOWLObjectPropertyAssertionAxiom(isEnemiesWith, otherAgentInd, agentInd);
+		OWLObjectPropertyAssertionAxiom axiom8 = dataFactory.getOWLObjectPropertyAssertionAxiom(isFriendlyWith, otherAgentInd, agentInd);
+		OWLObjectPropertyAssertionAxiom axiom9 = dataFactory.getOWLObjectPropertyAssertionAxiom(isNeutralWith, otherAgentInd, agentInd);
+		OWLObjectPropertyAssertionAxiom axiom10 = dataFactory.getOWLObjectPropertyAssertionAxiom(isUnfriendlyWith, otherAgentInd, agentInd);
+		
+		
+		
+		ArrayList<OWLOntologyChange> removeAxioms = new ArrayList<>();
+		removeAxioms.add(new RemoveAxiom(gameOntology, axiom1));
+		removeAxioms.add(new RemoveAxiom(gameOntology, axiom2));
+		removeAxioms.add(new RemoveAxiom(gameOntology, axiom3));
+		removeAxioms.add(new RemoveAxiom(gameOntology, axiom4));
+		removeAxioms.add(new RemoveAxiom(gameOntology, axiom5));
+		removeAxioms.add(new RemoveAxiom(gameOntology, axiom6));
+		removeAxioms.add(new RemoveAxiom(gameOntology, axiom7));
+		removeAxioms.add(new RemoveAxiom(gameOntology, axiom8));
+		removeAxioms.add(new RemoveAxiom(gameOntology, axiom9));
+		removeAxioms.add(new RemoveAxiom(gameOntology, axiom10));
+		
+		return removeAxioms;
+	}
+	
+	public void addChest(BaseChest chest, ArrayList<BaseItem> items) {
+		ArrayList<OWLOntologyChange> axioms = new ArrayList<>();
+		
+		String chestType = chest.getName().replaceAll("\\d", "");
+		
+		OWLClass chestClass = dataFactory.getOWLClass(IRI.create(ontologyIRIStr + chestType));
+		OWLNamedIndividual chestInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + chest.getName()));
+		OWLClassAssertionAxiom axiom = dataFactory.getOWLClassAssertionAxiom(chestClass, chestInd);
+		axioms.add(new AddAxiom(gameOntology, axiom));
+		
+		OWLObjectProperty contains = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "contains"));
+		
+		for (BaseItem item : items) {
+			OWLNamedIndividual itemInd = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + item.getName()));
+			OWLObjectPropertyAssertionAxiom containsAxiom = dataFactory.getOWLObjectPropertyAssertionAxiom(contains, chestInd, itemInd);
+			axioms.add(new AddAxiom(gameOntology, containsAxiom));
+		}
+		
+		saveOntology(axioms);
+	}
+	
+	public void removeObjectFromOntology(String name) {
+		OWLNamedIndividual removedObject = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + name));
+		OWLEntityRemover remover = new OWLEntityRemover(ontoManager, Collections.singleton(gameOntology));
+		remover.visit(removedObject);
+		saveOntology(remover.getChanges());
+	}
+
+	public void removeObjectsFromOntology(ArrayList<String> names) {
+		OWLEntityRemover remover = new OWLEntityRemover(ontoManager, Collections.singleton(gameOntology));
+		
+		for (String name : names) {
+			OWLNamedIndividual removedObject = dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + name));
+			remover.visit(removedObject);
+		}
+		
+		saveOntology(remover.getChanges());
+	}
+}

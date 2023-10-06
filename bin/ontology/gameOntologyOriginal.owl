@@ -1,0 +1,2559 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/velis/ontologies/2023/3/untitled-ontology-5#"
+     xml:base="http://www.semanticweb.org/velis/ontologies/2023/3/untitled-ontology-5"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:gameproject="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#contains">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#TreasureChest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedEquipment"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasAbilityTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasIngredient"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasItem"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasMonsterTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasPersonalityTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasQuality"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasSpawnedEntity"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAbilityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedBoots -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedBoots">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedEquipment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Boots"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedChestplate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedChestplate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedEquipment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Chestplate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedEquipment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedEquipment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Equipment"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasAbilityTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasIngredient"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasMonsterTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasPersonalityTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasQuality"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasSpawnedEntity"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAbilityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedHelmet -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedHelmet">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedEquipment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Helmet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedLeggings -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedLeggings">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedEquipment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Leggings"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedSecondWeapon -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedSecondWeapon">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedEquipment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Dagger"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedShield -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedShield">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedEquipment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Shield"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedWeapon -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedWeapon">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedEquipment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Weapon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasAbilityTrait -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasAbilityTrait">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAbilityTraitOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasIngredient"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasItem"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasMonsterTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasPersonalityTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasQuality"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasSpawnedEntity"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAbilityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasIngredient">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CraftingRecipe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Material"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasItem"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasMonsterTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasPersonalityTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasQuality"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasSpawnedEntity"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAbilityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasIngredient1 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasIngredient1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasIngredient"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CraftingRecipe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Material"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasIngredient2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasIngredient2 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasIngredient2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasIngredient"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CraftingRecipe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasMonsterTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasPersonalityTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasQuality"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasSpawnedEntity"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAbilityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasMonsterTrait -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasMonsterTrait">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Monster"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasPersonalityTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasQuality"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasSpawnedEntity"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAbilityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasNoRelationsWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasNoRelationsWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasPersonalityTrait -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasPersonalityTrait">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PersonalityTrait"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasQuality"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasSpawnedEntity"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAbilityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasQuality -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasQuality">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ItemQuality"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasSpawnedEntity"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAbilityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasSpawnedEntity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasSpawnedEntity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Structure"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAbilityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAbilityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAbilityTraitOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAbilityTraitOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAlliedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAlliedWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isContainedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#TreasureChest"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEnemiesWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEnemiesWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEquipedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Equipment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isFriendlyWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isFriendlyWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isIngredientOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Material"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CraftingRecipe"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isMonsterTraitOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Monster"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isOwnedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Structure"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isPersonlaityTraitOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PersonalityTrait"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isProducedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CraftingRecipe"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isSpawnedByStructure">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Structure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isStoredIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#City"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isUnfriendlyWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isUnfriendlyWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#inRelationshionshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#itemBelongsTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#madeFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Equipment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#EquipmentMaterial"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#owns">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Structure"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#produces">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CraftingRecipe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#stores">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#City"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ItemPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ItemPrice">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#attack -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#attack">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#bonusAttack -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#bonusAttack">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Weapon"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#bonusHealth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#bonusHealth">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#critChance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#critChance">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#evasionChance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#evasionChance">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#health -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#health">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ingredientAmount1 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ingredientAmount1">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CraftingRecipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ingredientAmount2 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ingredientAmount2">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CraftingRecipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#level -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#level">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#materialPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#materialPrice">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#structureAttack -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#structureAttack">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Structure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#structureHealth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#structureHealth">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Structure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#structureLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#structureLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Structure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HeroTrait"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PersonalityTrait"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Archer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Archer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Equipment"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ArmorRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ArmorRecipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#EquipmentRecipe"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#WeaponRecipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Boots -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Boots">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsRecipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ArmorRecipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Bow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Bow">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowRecipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#WeaponRecipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Chestplate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Chestplate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateRecipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ArmorRecipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#City -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#City">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Structure"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Collectable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Collectable"/>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Consumable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Consumable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CraftingRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CraftingRecipe"/>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Dagger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Dagger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerRecipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#WeaponRecipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Equipment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#EquipmentMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#EquipmentMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Material"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionMaterial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#EquipmentRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#EquipmentRecipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CraftingRecipe"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionRecipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#FleeingPotion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#FleeingPotion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Consumable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#GoldChest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#GoldChest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#TreasureChest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#GolemMonster -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#GolemMonster">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Monster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Graveyard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Graveyard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterStructure"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SpiderNest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hammer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hammer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerRecipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#WeaponRecipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HealthPotion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HealthPotion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Consumable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Helmet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Helmet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetRecipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ArmorRecipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Monster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HeroTrait -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HeroTrait">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Trait"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronChest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronChest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#TreasureChest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ItemQuality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ItemQuality"/>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Leggings -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Leggings">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsRecipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ArmorRecipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Material -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Material">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Collectable"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#TreasureChest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Monster -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Monster">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterStructure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterStructure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Trait"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PersonalityTrait -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PersonalityTrait">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HeroTrait"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionMaterial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionRecipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CraftingRecipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#RegenarationPotion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#RegenarationPotion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Consumable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Rogue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Rogue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Shield -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Shield">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldRecipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ArmorRecipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShroomerMonster -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShroomerMonster">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Monster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SkeletonMonster -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SkeletonMonster">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Monster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SpiderMonster -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SpiderMonster">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Monster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SpiderNest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SpiderNest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Structure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Structure"/>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SuperHealthPotion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SuperHealthPotion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Consumable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Sword -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Sword">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Weapon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordRecipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#WeaponRecipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Trait -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Trait"/>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#TreasureChest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#TreasureChest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Collectable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Warrior -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Warrior">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hero"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Weapon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Weapon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#WeaponRecipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#WeaponRecipe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#EquipmentRecipe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#WoodenChest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#WoodenChest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#TreasureChest"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Adamantite -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Adamantite">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#EquipmentMaterial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteBootsRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteBootsRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Adamantite"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteBowRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteBowRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Adamantite"/>
+        <gameproject:hasIngredient2 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#String"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</gameproject:ingredientAmount1>
+        <gameproject:ingredientAmount2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</gameproject:ingredientAmount2>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteChestplateRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteChestplateRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Adamantite"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteDaggerRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteDaggerRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Adamantite"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteHammerRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteHammerRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Adamantite"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteHelmetRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteHelmetRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Adamantite"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteLeggingsRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteLeggingsRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Adamantite"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteShieldRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteShieldRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Adamantite"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteSwordRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AdamantiteSwordRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Adamantite"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Alchemist -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Alchemist">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Antivenom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Antivenom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armored -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armored">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Average -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Average">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ItemQuality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Blacksmith -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Blacksmith">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Bloodrose -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Bloodrose">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionMaterial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Bloodthirsty -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Bloodthirsty">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PersonalityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsClass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Boss -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Boss">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowClass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Weapon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Brave -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Brave">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PersonalityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Burning_blood -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Burning_blood">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Burning_wasteland -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Burning_wasteland">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateClass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Cobalt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Cobalt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#EquipmentMaterial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltBootsRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltBootsRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Cobalt"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltBowRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltBowRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Cobalt"/>
+        <gameproject:hasIngredient2 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#String"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</gameproject:ingredientAmount1>
+        <gameproject:ingredientAmount2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</gameproject:ingredientAmount2>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltChestplateRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltChestplateRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Cobalt"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltDaggerRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltDaggerRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Cobalt"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltHammerRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltHammerRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Cobalt"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">33</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltHelmetRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltHelmetRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Cobalt"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltLeggingsRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltLeggingsRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Cobalt"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltShieldRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltShieldRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Cobalt"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltSwordRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CobaltSwordRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Cobalt"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Coward -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Coward">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PersonalityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerClass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Weapon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Daybloom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Daybloom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionMaterial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Detonator -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Detonator">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Dimwit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Dimwit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Fast_learner -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Fast_learner">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Ferocious -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Ferocious">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#FleeingPotionClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#FleeingPotionClass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Consumable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#FleeingPotionRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#FleeingPotionRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Shadowstalk"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#FleeingPotionClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Forge_disaster -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Forge_disaster">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Fragile -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Fragile">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Frost_infuser -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Frost_infuser">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Frozen_wasteland -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Frozen_wasteland">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Great -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Great">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ItemQuality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Greedy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Greedy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PersonalityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerClass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Weapon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HealthPotionClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HealthPotionClass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Consumable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HealthPotionRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HealthPotionRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Daybloom"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HealthPotionClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetClass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Herb_waster -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Herb_waster">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Iron -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Iron">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#EquipmentMaterial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronBootsRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronBootsRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Iron"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronBowRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronBowRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Iron"/>
+        <gameproject:hasIngredient2 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#String"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</gameproject:ingredientAmount1>
+        <gameproject:ingredientAmount2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</gameproject:ingredientAmount2>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronChestplateRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronChestplateRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Iron"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronDaggerRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronDaggerRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Iron"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronHammerRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronHammerRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Iron"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronHelmetRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronHelmetRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Iron"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronLeggingsRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronLeggingsRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Iron"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronShieldRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronShieldRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Iron"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronSwordRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronSwordRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Iron"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Last_stand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Last_stand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsClass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Moneybags -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Moneybags">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Moonglow -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Moonglow">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionMaterial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Mythril -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Mythril">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#EquipmentMaterial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilBootsRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilBootsRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Mythril"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilBowRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilBowRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Mythril"/>
+        <gameproject:hasIngredient2 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#String"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</gameproject:ingredientAmount1>
+        <gameproject:ingredientAmount2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</gameproject:ingredientAmount2>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilChestplateRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilChestplateRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Mythril"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilDaggerRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilDaggerRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Mythril"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilHammerRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilHammerRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Mythril"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilHelmetRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilHelmetRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Mythril"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilLeggingsRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilLeggingsRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Mythril"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilShieldRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilShieldRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Mythril"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilSwordRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MythrilSwordRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Mythril"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Nimble -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Nimble">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Poison_dabler -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Poison_dabler">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Poor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Poor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ItemQuality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Post_death_bitterness -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Post_death_bitterness">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Precise -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Precise">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#RegenarationPotionClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#RegenarationPotionClass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Consumable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#RegenarationPotionRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#RegenarationPotionRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Moonglow"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#RegenarationPotionClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Resourceful -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Resourceful">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Shadowstalk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Shadowstalk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionMaterial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldClass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Stone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Stone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#EquipmentMaterial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneBootsRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneBootsRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Stone"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneBowRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneBowRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Stone"/>
+        <gameproject:hasIngredient2 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#String"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</gameproject:ingredientAmount1>
+        <gameproject:ingredientAmount2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</gameproject:ingredientAmount2>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneChestplateRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneChestplateRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Stone"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneDaggerRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneDaggerRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Stone"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneHammerRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneHammerRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Stone"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneHelmetRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneHelmetRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Stone"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneLeggingsRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneLeggingsRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Stone"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneShieldRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneShieldRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Stone"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneSwordRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#StoneSwordRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Stone"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#String -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#String">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#EquipmentMaterial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SuperHealthPotionClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SuperHealthPotionClass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Consumable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SuperHealthPotionRecipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SuperHealthPotionRecipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#PotionRecipe"/>
+        <gameproject:hasIngredient1 rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Bloodrose"/>
+        <gameproject:produces rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SuperHealthPotionClass"/>
+        <gameproject:ingredientAmount1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</gameproject:ingredientAmount1>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Supreme -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Supreme">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ItemQuality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordClass">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Weapon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Tame -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Tame">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#MonsterTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Tank -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Tank">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Wild -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Wild">
+        <rdf:type rdf:resource="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#AbilityTrait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Archer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Rogue"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Warrior"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Boots"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Chestplate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Helmet"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Leggings"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Shield"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BootsRecipe"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ChestplateRecipe"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HelmetRecipe"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#LeggingsRecipe"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShieldRecipe"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Bow"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Dagger"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Hammer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Sword"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#BowRecipe"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#DaggerRecipe"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HammerRecipe"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SwordRecipe"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Collectable"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#CraftingRecipe"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Entity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Item"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ItemQuality"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Structure"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Trait"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#FleeingPotion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#HealthPotion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#RegenarationPotion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SuperHealthPotion"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#GoldChest"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#IronChest"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#WoodenChest"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#GolemMonster"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#ShroomerMonster"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SkeletonMonster"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#SpiderMonster"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Alchemist"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Antivenom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Blacksmith"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Burning_blood"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Dimwit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Fast_learner"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Forge_disaster"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Frost_infuser"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Herb_waster"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Last_stand"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Nimble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Poison_dabler"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Post_death_bitterness"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Precise"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Resourceful"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Tank"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Wild"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Armored"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Boss"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Burning_wasteland"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Detonator"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Ferocious"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Fragile"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Frozen_wasteland"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Moneybags"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Tame"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Bloodthirsty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Brave"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Coward"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#Greedy"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedBoots"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedChestplate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedHelmet"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedLeggings"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedSecondWeapon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedShield"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#equipedWeapon"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#hasNoRelationsWith"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isAlliedWith"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isEnemiesWith"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isFriendlyWith"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/velis/ontologies/2023/3/GameProject#isUnfriendlyWith"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

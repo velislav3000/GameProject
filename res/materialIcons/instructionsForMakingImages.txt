@@ -1,0 +1,4 @@
+Photoshop -> Remove background
+Paint3D -> Resize Image to 100xA where A is the value that is set from keeping aspect ration
+Paint3D -> Increase Canvas' size tile the image is 132x100
+Photoshop -> Add a Sharpen filter
